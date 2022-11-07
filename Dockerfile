@@ -1,13 +1,15 @@
 FROM pytorch/pytorch:1.11.0-cuda11.3-cudnn8-runtime
 
 RUN pip install \
-    nnunet==1.7.0
+    cycler==0.11.0 \
+    nnunet==1.7.0 \
+    matplotlib==3.5.2
 
 RUN mkdir -p /nnUNet_raw_data_base/nnUNet_raw_data/
 RUN mkdir /nnUNet_preprocessed/
 RUN mkdir /nnUNet_trained_models/
 
-ENV nnUNet_raw_data_base = "/nnUNet_raw_data_base/"
+ENV nnUNet_raw_data_base="/nnUNet_raw_data_base/"
 ENV nnUNet_preprocessed="/nnUNet_preprocessed/"
 ENV RESULTS_FOLDER="/nnUNet_trained_models/"
 
